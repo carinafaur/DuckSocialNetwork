@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddFriendshipController">
+    <children>
+        <Label text="Add New Friendship">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+
+        <GridPane hgap="10.0" vgap="15.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="User 1 ID:" />
+                <TextField fx:id="friendshipId1Field" promptText="Enter ID 1" GridPane.columnIndex="1" />
+
+                <Label text="User 2 ID:" GridPane.rowIndex="1" />
+                <TextField fx:id="friendshipId2Field" promptText="Enter ID 2" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+
+        <Button mnemonicParsing="false" onAction="#addFriendshipAction" prefWidth="130.0" text="Add Friendship" />
+    </children>
+    <padding>
+        <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
+    </padding>
+</VBox>

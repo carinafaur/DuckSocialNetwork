@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="mainlayout" alignment="CENTER" prefHeight="450.0" prefWidth="600.0" spacing="20.0"
+      style="-fx-background-color: #f4f7f6;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.LoginController">
+
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+
+    <VBox alignment="CENTER" spacing="5.0">
+        <Label text="🦆 DuckSocial" style="-fx-text-fill: #2d3436; -fx-font-weight: bold;">
+            <font>
+                <Font size="32.0" />
+            </font>
+        </Label>
+        <Label fx:id="loginLabel" text="Welcome back!" style="-fx-text-fill: #636e72;" />
+        <HBox fx:id="searchBarContainer" spacing="10" alignment="CENTER" visible="false">
+            <TextField fx:id="searchUserField" promptText="Search a username..." prefWidth="200"/>
+            <Button text="🔍" onAction="#searchUser"/>
+            <HBox fx:id="foundUser" spacing="10" alignment="CENTER">
+            </HBox>
+        </HBox>
+    </VBox>
+
+    <VBox maxWidth="350.0" spacing="15.0"
+          style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+        <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+        </padding>
+        <children>
+            <VBox spacing="5.0">
+                <Label fx:id="usernameLabel" text="Username" style="-fx-font-weight: bold; -fx-text-fill: #2d3436;" />
+                <TextField fx:id="usernameTextField" prefHeight="40.0" promptText="Enter your username"
+                           style="-fx-background-radius: 8; -fx-border-color: #dfe6e9; -fx-border-radius: 8; -fx-background-color: #fafafa;" />
+            </VBox>
+
+            <VBox spacing="5.0">
+                <Label fx:id="passwordLabel" text="Password" style="-fx-font-weight: bold; -fx-text-fill: #2d3436;" />
+                <PasswordField fx:id="passwordField" prefHeight="40.0" promptText="••••••••"
+                               style="-fx-background-radius: 8; -fx-border-color: #dfe6e9; -fx-border-radius: 8; -fx-background-color: #fafafa;" />
+            </VBox>
+
+            <Button fx:id="loginButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loginUser" prefHeight="40.0"
+                    style="-fx-background-color: #0984e3; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-cursor: hand;" text="Login" />
+
+            <Button fx:id="logoutButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#logoutUser" prefHeight="40.0"
+                    style="-fx-background-color: #0984e3; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-cursor: hand;" text="Logout" />
+
+        </children>
+    </VBox>
+
+    <FlowPane alignment="CENTER" hgap="10.0" vgap="10.0">
+        <Button fx:id="friendsListButton" onAction="#friendsScene" prefHeight="35.0"
+                style="-fx-background-color: #55efc4; -fx-text-fill: #00b894; -fx-background-radius: 20; -fx-font-weight: bold;" text="👥 Friends" />
+
+        <Button fx:id="messagesButton" onAction="#messageScene" prefHeight="35.0"
+                style="-fx-background-color: #a29bfe; -fx-text-fill: #6c5ce7; -fx-background-radius: 20; -fx-font-weight: bold;" text="💬 Messages" />
+
+        <Button fx:id="manageUsersButton" onAction="#usersScene" prefHeight="35.0"
+                style="-fx-background-color: #fab1a0; -fx-text-fill: #e17055; -fx-background-radius: 20; -fx-font-weight: bold;" text="⚙️ Manage Users" />
+
+        <Button fx:id="eventsButton" onAction="#eventsScene" prefHeight="35.0"
+                style="-fx-background-color: #ffeaa7; -fx-text-fill: #d63031; -fx-background-radius: 20; -fx-font-weight: bold;" text="🏆 Events" />
+
+        <Button fx:id="newWindowButton" onAction="#handleNewWindow" prefHeight="35.0"
+                style="-fx-background-color: transparent; -fx-border-color: #b2bec3; -fx-border-radius: 20; -fx-text-fill: #636e72;" text="➕ New Window" />
+    </FlowPane>
+
+</VBox>

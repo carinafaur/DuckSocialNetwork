@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="messageLayout" prefHeight="700.0" prefWidth="1000.0"
+      style="-fx-background-color: #f0f2f5;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.MessageController">
+    <children>
+
+        <VBox fx:id="contactsLayout" prefWidth="320.0"
+              style="-fx-background-color: white; -fx-border-color: #dfe6e9; -fx-border-width: 0 1 0 0;">
+            <children>
+                <Label text="Messages" style="-fx-font-weight: bold; -fx-text-fill: #2d3436;">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+
+                <ListView fx:id="contactsListView" VBox.vgrow="ALWAYS"
+                          style="-fx-background-color: transparent; -fx-background-insets: 0; -fx-padding: 5;"/>
+            </children>
+        </VBox>
+
+        <VBox fx:id="conversationLayout" HBox.hgrow="ALWAYS" style="-fx-background-color: #ffffff;">
+            <children>
+
+                <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="15.0"
+                      style="-fx-background-color: white; -fx-border-color: #dfe6e9; -fx-border-width: 0 0 1 0;">
+                    <children>
+                        <VBox alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="Chat Conversation" style="-fx-font-weight: bold; -fx-text-fill: #2d3436;">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets left="25.0" right="25.0" />
+                    </padding>
+                </HBox>
+
+                <ListView fx:id="conversationListView" VBox.vgrow="ALWAYS"
+                          style="-fx-background-color: #f9f9f9; -fx-background-insets: 0; -fx-border-color: transparent;" />
+
+                <HBox fx:id="inputLayout" alignment="CENTER" spacing="15.0" prefHeight="80.0"
+                      style="-fx-background-color: white; -fx-border-color: #dfe6e9; -fx-border-width: 1 0 0 0;">
+                    <children>
+                        <TextField fx:id="messageInputField" promptText="Write a message to your duck friend..."
+                                   HBox.hgrow="ALWAYS" prefHeight="45.0"
+                                   style="-fx-background-color: #f0f2f5; -fx-background-radius: 25; -fx-padding: 0 20 0 20; -fx-border-color: transparent;">
+                        </TextField>
+
+                        <Button fx:id="sendButton" mnemonicParsing="false" onAction="#sendMessage"
+                                prefHeight="45.0" prefWidth="80.0"
+                                style="-fx-background-color: #0984e3; -fx-text-fill: white; -fx-background-radius: 25; -fx-font-weight: bold; -fx-cursor: hand;"
+                                text="Send" />
+                    </children>
+                    <padding>
+                        <Insets left="20.0" right="20.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</HBox>
